@@ -1,0 +1,147 @@
+1. Generated ephemeral Ed25519 keypair.
+2. Proposed hash-manifest job.
+{
+  "step": 2,
+  "proposal_id": "proposal_demo_manifest",
+  "spec_hash": "sha256:<redacted>",
+  "input_hashes": [
+    {
+      "declared_path": "demo/fixtures/quarterly-widgets.json",
+      "sha256": "sha256:<redacted>",
+      "size_bytes": 78
+    }
+  ]
+}
+3. Simulated conversational self-approval refused; no approval event exists.
+{
+  "ok": false,
+  "status": "conversational_approval_refused",
+  "reason": "cli_only"
+}
+4. Human approval recorded through CLI path.
+{
+  "step": 4,
+  "approval_id": "approval_proposal_demo_manifest_<redacted>",
+  "expires_at": "2026-01-02T00:01:00.000Z",
+  "single_use": true
+}
+5. Executed once; output hash recorded and approval consumed.
+{
+  "step": 5,
+  "output_hash": "sha256:<redacted>",
+  "approval_consumed": true
+}
+6. Replay refused with approval_consumed.
+{
+  "step": 6,
+  "replay_refusal": "approval_consumed"
+}
+7. Interrogation answers from ledger evidence only.
+{
+  "step": 7,
+  "answers": [
+    {
+      "claim": "manifest_job_ran",
+      "evidence": [
+        {
+          "event_id": "evt_<redacted>",
+          "event_type": "sidecar_job_executed",
+          "entry_hash": "sha256:<redacted>",
+          "timestamp": "2026-01-01T00:02:00.000Z"
+        }
+      ],
+      "answer_text": "Yes. Proposal proposal_demo_manifest has execution ledger evidence for hash_manifest_v0: output sha256:<redacted>."
+    },
+    {
+      "claim": "email_sent",
+      "evidence": [],
+      "answer_text": "No signed ledger evidence supports that claim."
+    },
+    {
+      "claim": "second_job_approved",
+      "evidence": [],
+      "answer_text": "No signed ledger evidence supports that claim."
+    }
+  ]
+}
+TAMPER DETECTED - entry 0 was modified after signing. Its content no longer matches its signed hash (entry_hash_mismatch). Every claim depending on this entry is now unverifiable.
+CHAIN BROKEN - entry 2 expects a predecessor that no longer exists (prev_hash_mismatch). An event has been deleted from history.
+8. Tamper checks failed loudly, then restored verification passed.
+{
+  "step": 8,
+  "byte_flip_failure": {
+    "ok": false,
+    "index": 0,
+    "reason": "entry_hash_mismatch",
+    "expected": "sha256:<redacted>",
+    "actual": "sha256:<redacted>",
+    "event_id": "evt_<redacted>"
+  },
+  "byte_restore": {
+    "ok": true,
+    "entry_count": 4,
+    "ledger_head_hash": "sha256:<redacted>"
+  },
+  "chain_deletion_failure": {
+    "ok": false,
+    "index": 2,
+    "reason": "prev_hash_mismatch",
+    "expected": "sha256:<redacted>",
+    "actual": "sha256:<redacted>",
+    "event_id": "evt_<redacted>"
+  },
+  "chain_restore": {
+    "ok": true,
+    "entry_count": 4,
+    "ledger_head_hash": "sha256:<redacted>"
+  }
+}
+INDEPENDENT VERIFIER - valid bundle accepted with 3 checks.
+INDEPENDENT VERIFIER CATCH - forged chain deletion refused (prev_hash_mismatch).
+9. Exported proof bundle; package and independent verifiers passed; independent verifier caught a chain-deletion forgery.
+{
+  "step": 9,
+  "proof_bundle": "<temp-path>",
+  "package_verify": {
+    "ok": true,
+    "entry_count": 4,
+    "ledger_head_hash": "sha256:<redacted>",
+    "semantic_ok": true
+  },
+  "independent_verify": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "ledger cryptographic structure",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "name": "proposal store anchor",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "name": "event semantic consistency",
+        "pass": true,
+        "detail": "ok"
+      }
+    ],
+    "first_failure": null
+  },
+  "independent_chain_deletion_catch": {
+    "ok": false,
+    "checks": [
+      {
+        "name": "ledger cryptographic structure",
+        "pass": false,
+        "detail": "prev_hash_mismatch"
+      }
+    ],
+    "first_failure": {
+      "index": 1,
+      "reason": "prev_hash_mismatch",
+      "event_id": "evt_<redacted>"
+    }
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "manifest_version": "money-penny-build-week-release.v0.1",
+  "generated_at": "2026-07-20T03:54:42.403Z",
+  "release_name": "Money Penny Readback - OpenAI Build Week 2026 Public GitHub Demo",
+  "source_snapshot_sha256": "sha256:b4fa67f293034da1d3284aa41d88b73b8d019e9d7106061e45174f80d9d21155",
+  "deployment_profile": "isolated-vercel-public-github-demo.v0.2",
+  "file_count": 62,
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "sha256:cd65a9ce4afbfb230f493f4f7cf26397e00b988dd30356ebf9246b69570ab5af"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "sha256:15b075d32bb27f5174e48766521e472f9f8dfb1efcb040f59805cd42914f2e40"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "sha256:b9c5a375992d193790846a69db831bf7c70c6a72644dfa69e9413fa6bbec74f8"
+    },
+    {
+      "path": "README.md",
+      "sha256": "sha256:c199970924d6ce189a5ec4f0babb2b8f0e74bf9effb62ea07ce8677f0978692c"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "sha256:ef92e0ba1a235baa9fe6ab243b9c158d93105d15675ff719e12178b2ee7975be"
+    },
+    {
+      "path": "api/git-demo.mjs",
+      "sha256": "sha256:cd5c2e8a7cb49183ccd73c3a615221ec842760844d96286f31cd1c3aa20ecaa3"
+    },
+    {
+      "path": "api/git-review.mjs",
+      "sha256": "sha256:7eb9e99307cb557eb46d1939121b519ca410295cdb4a93f8a54a9fb2144f36eb"
+    },
+    {
+      "path": "api/github-demo.mjs",
+      "sha256": "sha256:5104dc739fdf04693dd8276de0aeda1e1debccdb05ec0e748b55f81e8503c7e2"
+    },
+    {
+      "path": "api/github-review.mjs",
+      "sha256": "sha256:36dbd15fae32c44661cf109ffdc0da2f7863134bbe7d4985a1c073b9c57e5c5e"
+    },
+    {
+      "path": "api/health.mjs",
+      "sha256": "sha256:40011166b68629e78db41cdb024ff23d473274d8cfddf5dfe7f4c7c3fa1209e9"
+    },
+    {
+      "path": "api/review.mjs",
+      "sha256": "sha256:137176c7acb24f7dc8e4c8f217f4807b5873abf4a9f1df1aaa112fefcd8e82ea"
+    },
+    {
+      "path": "api/scenario.mjs",
+      "sha256": "sha256:9cda34886a648efa619161f5bd1a13c349884840718183f6812a813e3498792b"
+    },
+    {
+      "path": "api/status.mjs",
+      "sha256": "sha256:54cd3eaf0293245fd8cab2e5014c2bc6061ec28d8542bda7c5e420fb3573f2e6"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "sha256:07549e955d8f3fb150ba3a608bc178ce5d15e3a4434ccd8a9be10a3ddd3e5b5f"
+    },
+    {
+      "path": "docs/submission/DEMO_SCRIPT.md",
+      "sha256": "sha256:e853f8e9d60a21703e2769cc3d07609740c2d22aac8d03f513b94029252acf0f"
+    },
+    {
+      "path": "docs/submission/DEVPOST_DESCRIPTION.md",
+      "sha256": "sha256:056b205e167c9c3a28cc7dc02cbfff833ce540e7bd13e1a281a9da57b1bd36de"
+    },
+    {
+      "path": "foundry/moneypenny-action-policy.mjs",
+      "sha256": "sha256:ac8d4a5cc128d35cc154d3cbfebf0b99cc01a2599d2b4d42ac5d3bc2d58d9ab9"
+    },
+    {
+      "path": "foundry/moneypenny-agent-review.mjs",
+      "sha256": "sha256:b35bc034f63a87d44020a1bd45e57ae33b0d918576ce3a1f1048d430f4bd18a0"
+    },
+    {
+      "path": "foundry/moneypenny-completion-receipt.mjs",
+      "sha256": "sha256:d6b7cf2b5b7d2c232f780b4ce6dab5a92121b6e528d02bfc8dc2d1304b04bb3a"
+    },
+    {
+      "path": "foundry/moneypenny-git-reality-check.mjs",
+      "sha256": "sha256:85c3594f911592c8a0feb1295d0acda34bc352228b65550bd501c97ae0757110"
+    },
+    {
+      "path": "foundry/moneypenny-prompt-security.mjs",
+      "sha256": "sha256:cdbfe44af6fc1983e5ab80bd37f31bf36a7cc9fcd7ed9fd58b07c5118591fd77"
+    },
+    {
+      "path": "foundry/moneypenny-public-github-reality-check.mjs",
+      "sha256": "sha256:94221856e044b2962720687d90c76fb306dc93b8d48b131bacaf2a6fbe451a28"
+    },
+    {
+      "path": "lib/git-demo.mjs",
+      "sha256": "sha256:8c4232b970c55d9295a997c5d85e4040ec2cf9df70334bddfa53e110acb9c009"
+    },
+    {
+      "path": "lib/trust-lab.mjs",
+      "sha256": "sha256:59e4fad638c9bab3760d93f2999172754553e391028a7dbaba46c17921213ed9"
+    },
+    {
+      "path": "lib/vercel-api.mjs",
+      "sha256": "sha256:20dd7ab56a8f147308df4c08e0294e345925ca537f65268c68fb3340092519c8"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "sha256:ca849e80ea51d49eac5be2eacfe92d8995baa9400b5e357f50a530db212577ec"
+    },
+    {
+      "path": "package.json",
+      "sha256": "sha256:45747c5ab0a899ea6d10e1bf1b1787af95eba9679b6ce805b79c789588615d25"
+    },
+    {
+      "path": "packages/readback/LICENSE",
+      "sha256": "sha256:b9c5a375992d193790846a69db831bf7c70c6a72644dfa69e9413fa6bbec74f8"
+    },
+    {
+      "path": "packages/readback/README.md",
+      "sha256": "sha256:d1572c0c64da75cb85345a7ca8747ac5f60c1e1005b79be6a2c2e4792efe8237"
+    },
+    {
+      "path": "packages/readback/SCHEMA/event-schema.v1.json",
+      "sha256": "sha256:fa547e949efe8de6e6e802772cc29fe0ff2999dba660be16001ec307891a318d"
+    },
+    {
+      "path": "packages/readback/SECURITY.md",
+      "sha256": "sha256:6ae8672d9a7593987ea365158238bcb809a2e62b85f31cade71223d7bae1a4f5"
+    },
+    {
+      "path": "packages/readback/bin/readback.mjs",
+      "sha256": "sha256:20857a9b7e1c350374c2cdcb6ae247eb95e90b40a446b99c479f211548f459cc"
+    },
+    {
+      "path": "packages/readback/bin/verify-bundle.mjs",
+      "sha256": "sha256:59ad47c05a00733f88250a5c8d0c9612a9384f368226c51d5fddf5495adb7f08"
+    },
+    {
+      "path": "packages/readback/demo/fixtures/hash-manifest-spec.json",
+      "sha256": "sha256:71372bd4207e73c2d3436841cfd43c7d53d13040bc23b9aff9f8f5d03002eb7d"
+    },
+    {
+      "path": "packages/readback/demo/fixtures/quarterly-widgets.json",
+      "sha256": "sha256:cbb9c20cb6b7ae6fe9c4500e2a256eab416670e1809de11297e20813baea023f"
+    },
+    {
+      "path": "packages/readback/demo/run-demo.mjs",
+      "sha256": "sha256:d5d2d7c79f2b2cbd4a0888df64b42a356cb3a4943c0276d14ead88d590ba4f45"
+    },
+    {
+      "path": "packages/readback/demo/transcript.sample.txt",
+      "sha256": "sha256:793479f7cf8e3c3e889e0301948ba18bc4d05f12d8bc0512f2de5255250af797"
+    },
+    {
+      "path": "packages/readback/docs/API.md",
+      "sha256": "sha256:3320bd47e7368e40e6aba2b9297f8a236dc309be0e5d6c0eff5943ecaccff0f3"
+    },
+    {
+      "path": "packages/readback/docs/CHANGELOG.md",
+      "sha256": "sha256:0abc14b173aaeed8ddd1cd354402397f168ccea0d661f2092cda6ff2c536b7c1"
+    },
+    {
+      "path": "packages/readback/docs/EVENT-SCHEMA.md",
+      "sha256": "sha256:e15da4fef85a11bcf7dd74eab4bfbe3b430a7c779bc31b23707b5f15e40a55ad"
+    },
+    {
+      "path": "packages/readback/docs/PROVENANCE.md",
+      "sha256": "sha256:9659aaf68c65aabf26e5b9e1dfdc2c89cfe593a5d8aa2c31205f0ff6b6f2daae"
+    },
+    {
+      "path": "packages/readback/docs/THREAT-MODEL.md",
+      "sha256": "sha256:2cf77d54e0f839ab83673a728b3c4e0271e6520e11981f2e57f069d6ef0d74de"
+    },
+    {
+      "path": "packages/readback/package.json",
+      "sha256": "sha256:ff90621551d7cec31f4fe15df3ee36f8fcd00ce77c5a7125dacf228abfd33aa2"
+    },
+    {
+      "path": "packages/readback/src/approvals.mjs",
+      "sha256": "sha256:73fa0c38a2eef1093bb0a852cb43f973b56346d258a3735d8c40078095bd74d0"
+    },
+    {
+      "path": "packages/readback/src/config.mjs",
+      "sha256": "sha256:0e2f1339a25cd9531e7d9a5eac4c0b3d413172c6f93b0e019f8fe90653055458"
+    },
+    {
+      "path": "packages/readback/src/execute.mjs",
+      "sha256": "sha256:4be3acf38895fa633bdb2438e06e22002354a014121b464568eb8b1f4c7ae9fb"
+    },
+    {
+      "path": "packages/readback/src/gate.mjs",
+      "sha256": "sha256:c2ee25a0d9c3c3c91c9ec6974dcce0e7785794009f7aced0bfe3300144d77e15"
+    },
+    {
+      "path": "packages/readback/src/jobs/hash-manifest.mjs",
+      "sha256": "sha256:a666ecb13bc904ce7c2190ad065b4d3fa9dff54b72491bb01306ec54c6075745"
+    },
+    {
+      "path": "packages/readback/src/jobs/noop.mjs",
+      "sha256": "sha256:5acf5f6e4e726d1cbf72ba1a3c23300bbd4574dceed4902cc26e771fd0e09f2f"
+    },
+    {
+      "path": "packages/readback/src/ledger.mjs",
+      "sha256": "sha256:cf8d11e48a5249fd1bc08f43f877484ac738ed8c047213715855024ba4068b04"
+    },
+    {
+      "path": "packages/readback/src/proposals.mjs",
+      "sha256": "sha256:f2a6ea3d5cbb53144f2c81d21ced8bd2796d5970ad563fb2958773153943306b"
+    },
+    {
+      "path": "packages/readback/src/readback.mjs",
+      "sha256": "sha256:78315ce2610a5c386d59aca55a2c67fa00ce4de1044e5ddbe5cc6c804865577b"
+    },
+    {
+      "path": "packages/readback/test/adversarial.test.mjs",
+      "sha256": "sha256:e41b7bc6f91c0610067fb22afa2d3fdde80bf32fe03d8804dc140740f84b22df"
+    },
+    {
+      "path": "packages/readback/test/readback.test.mjs",
+      "sha256": "sha256:fab15d8d17eab31f46a41090a78acc471ae438ca58f82d69fab5f62f93230f2f"
+    },
+    {
+      "path": "public/app.js",
+      "sha256": "sha256:95ff2673e58603bcaf3d30031c0f297256babe9ae01a4c68a1492f25f51602e0"
+    },
+    {
+      "path": "public/index.html",
+      "sha256": "sha256:48d70cfbe200f3f74c5915aad1d0c2fef91af0a2dd103be4cf2428cd83014940"
+    },
+    {
+      "path": "public/styles.css",
+      "sha256": "sha256:a7be801ebebd2b40f06a062ee82c53587cba1f49519a8fc07686c1a712e6235e"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "sha256": "sha256:daca1787b443d5d7957a2a07f819fd5ef610de0496edd97ed03ddef149513888"
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "sha256:6512b0b497a9dcc4c96b11bfaaa0f6a31d20567acda27bfe8f7aa09dba1da2e9"
+    },
+    {
+      "path": "test/public-github.test.mjs",
+      "sha256": "sha256:daf6eba1d038963ccb19f0b909f285ad9500ccb60ccce3f48dc3fc78f524315e"
+    },
+    {
+      "path": "test/release.test.mjs",
+      "sha256": "sha256:d41d78ae90f89e10137caeb95eaef70e4a8de2e1432e0b4cd800dd4d139c66f2"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "sha256:f0f123a54be43183f9826950fe0cc05921666a6a24fd596429ffd60c1acc07a8"
+    }
+  ]
+}

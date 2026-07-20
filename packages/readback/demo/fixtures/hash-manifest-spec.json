@@ -1,0 +1,13 @@
+{
+  "spec_version": "readback-job-spec.v0.1",
+  "job_id": "job_synthetic_manifest",
+  "job_type": "hash_manifest_v0",
+  "input_paths": [
+    "demo/fixtures/quarterly-widgets.json"
+  ],
+  "output_filename": "manifest.json",
+  "parameters": {
+    "fixed_timestamp": "2026-01-01T00:00:00.000Z"
+  },
+  "spec_hash": "sha256:56e8c5be0bfb5a099b9fb0d8fe277d05fa2aee103cc4ce2139865b006ae1e4dd"
+}

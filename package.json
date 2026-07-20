@@ -1,0 +1,18 @@
+{
+  "name": "money-penny-readback-build-week",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local-first trust supervisor that checks what other AI agents claim they did.",
+  "license": "MIT",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.mjs packages/readback/test/*.test.mjs",
+    "verify": "node scripts/verify-release.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

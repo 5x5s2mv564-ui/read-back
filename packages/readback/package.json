@@ -1,0 +1,32 @@
+{
+  "name": "readback",
+  "version": "0.2.1",
+  "license": "MIT",
+  "type": "module",
+  "description": "Zero-dependency claim-governance proof harness for evidence-bound agent claims.",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "bin": {
+    "readback": "./bin/readback.mjs",
+    "readback-verify-bundle": "./bin/verify-bundle.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "demo": "node demo/run-demo.mjs"
+  },
+  "files": [
+    "src",
+    "bin",
+    "demo",
+    "docs",
+    "test",
+    "SCHEMA",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE",
+    "package.json"
+  ]
+}

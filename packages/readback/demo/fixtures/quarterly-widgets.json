@@ -1,0 +1,14 @@
+{
+  "fixture": "quarterly-widgets",
+  "owner": "Ada Lovelace",
+  "items": [
+    {
+      "sku": "widget-alpha",
+      "count": 3
+    },
+    {
+      "sku": "widget-beta",
+      "count": 5
+    }
+  ]
+}

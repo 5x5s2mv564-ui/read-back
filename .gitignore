@@ -1,0 +1,9 @@
+.DS_Store
+.env*
+*.log
+node_modules/
+.vercel/
+runtime/
+tmp/
+coverage/
+EXPORT-MANIFEST.json

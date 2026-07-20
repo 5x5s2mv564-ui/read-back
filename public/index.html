@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Money Penny Readback</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Money Penny Readback home">
+      <span class="brand-mark" aria-hidden="true">MP</span>
+      <span>
+        <strong>Money Penny</strong>
+        <small>Readback</small>
+      </span>
+    </a>
+    <div class="runtime-state" data-runtime-state="checking">
+      <span aria-hidden="true"></span>
+      <span data-runtime-label>Checking runtime</span>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <header class="workspace-header">
+      <div>
+        <p class="eyebrow">Personal AI chief of staff</p>
+        <h1>Money Penny protects your trust.</h1>
+      </div>
+      <p>She checks what other agents actually know before accepting "done."</p>
+    </header>
+
+    <div class="mode-tabs" role="tablist" aria-label="Review modes">
+      <button id="tab-trust" type="button" role="tab" data-tab="trust" aria-controls="panel-trust" aria-selected="true" tabindex="0">Trust Lab</button>
+      <button id="tab-git" type="button" role="tab" data-tab="git" data-git-tab aria-controls="panel-git" aria-selected="false" tabindex="-1">Live Git</button>
+      <button id="tab-review" type="button" role="tab" data-tab="review" aria-controls="panel-review" aria-selected="false" tabindex="-1">Review output</button>
+    </div>
+
+    <div class="workspace-grid">
+      <section class="input-pane" aria-label="Review controls">
+        <section id="panel-trust" class="mode-panel" role="tabpanel" data-panel="trust" aria-labelledby="tab-trust">
+          <header class="panel-heading">
+            <div>
+              <p class="section-number">01</p>
+              <h2>Trust Lab</h2>
+            </div>
+            <span class="boundary-label">Synthetic</span>
+          </header>
+
+          <div class="scenario-list">
+            <button type="button" data-scenario="unproven">
+              <span class="scenario-index">A</span>
+              <span><strong>Unproven</strong><small>Completion claim, no evidence</small></span>
+              <span class="expected expected-hold">Hold</span>
+            </button>
+            <button type="button" data-scenario="verified">
+              <span class="scenario-index">B</span>
+              <span><strong>Verified</strong><small>Trusted, signed Readback</small></span>
+              <span class="expected expected-support">Support</span>
+            </button>
+            <button type="button" data-scenario="unknown_signer">
+              <span class="scenario-index">C</span>
+              <span><strong>Unknown signer</strong><small>Valid signature, no trust anchor</small></span>
+              <span class="expected expected-hold">Hold</span>
+            </button>
+            <button type="button" data-scenario="tampered">
+              <span class="scenario-index">D</span>
+              <span><strong>Tampered</strong><small>Signed evidence altered later</small></span>
+              <span class="expected expected-block">Block</span>
+            </button>
+            <button type="button" data-scenario="prompt_attack">
+              <span class="scenario-index">E</span>
+              <span><strong>Prompt attack</strong><small>Instructions hidden in agent output</small></span>
+              <span class="expected expected-block">Block</span>
+            </button>
+          </div>
+
+          <div class="boundary-strip" role="group" aria-label="Trust Lab runtime boundary">
+            <span data-runtime-scope>Local</span>
+            <span>Read-only review</span>
+            <span>Fresh keys</span>
+            <span>No accounts</span>
+          </div>
+        </section>
+
+        <section id="panel-git" class="mode-panel" role="tabpanel" data-panel="git" aria-labelledby="tab-git" hidden>
+          <header class="panel-heading">
+            <div>
+              <p class="section-number">02</p>
+              <h2 data-git-heading>Live Git check</h2>
+            </div>
+            <span class="boundary-label" data-git-source>Connecting</span>
+          </header>
+
+          <div class="git-actions">
+            <button type="button" class="primary-command" data-git-demo="confirmed">
+              <strong data-git-confirm-label>Confirm live facts</strong>
+              <small data-git-confirm-note>Generate a claim that matches Git</small>
+            </button>
+            <button type="button" class="danger-command" data-git-demo="contradicted">
+              <strong>Catch a false claim</strong>
+              <small data-git-contradict-note>Generate a claim that conflicts with Git</small>
+            </button>
+          </div>
+
+          <form data-git-form>
+            <div class="source-selector" data-github-controls hidden>
+              <label for="github-repository">Public GitHub repository</label>
+              <input
+                id="github-repository"
+                name="repository"
+                value="openai/openai-node"
+                maxlength="220"
+                inputmode="url"
+                autocomplete="off"
+                autocapitalize="none"
+                spellcheck="false"
+                required
+              >
+              <p>Enter <strong>owner/repository</strong> or a public github.com repository URL.</p>
+            </div>
+
+            <label for="git-output">Coding agent report</label>
+            <textarea id="git-output" name="agent_output" rows="7" maxlength="24000">The Git worktree is clean.</textarea>
+            <p class="field-note" data-git-field-note>Fixed read-only commands only. The report cannot supply a command or repository path.</p>
+            <button type="submit" class="run-button" data-git-submit>Check against Git</button>
+          </form>
+
+          <dl class="connector-contract">
+            <div><dt>Commands</dt><dd data-contract-commands>Fixed allowlist</dd></div>
+            <div><dt>Network</dt><dd data-contract-network>Disabled</dd></div>
+            <div><dt>Repository writes</dt><dd>Disabled</dd></div>
+            <div><dt>Raw file data</dt><dd data-contract-files>Never returned</dd></div>
+          </dl>
+        </section>
+
+        <section id="panel-review" class="mode-panel" role="tabpanel" data-panel="review" aria-labelledby="tab-review" hidden>
+          <header class="panel-heading">
+            <div>
+              <p class="section-number">03</p>
+              <h2>Review outside output</h2>
+            </div>
+            <span class="boundary-label">Untrusted input</span>
+          </header>
+
+          <form data-review-form>
+            <div class="field-row">
+              <label for="review-source">
+                Source
+                <select id="review-source" name="source_label">
+                  <option>Another AI assistant</option>
+                  <option>Agent workflow</option>
+                  <option>Automation</option>
+                  <option>Coding agent</option>
+                </select>
+              </label>
+              <label>
+                Expected task
+                <input name="task" maxlength="4000" placeholder="What was the agent meant to do?">
+              </label>
+            </div>
+            <label for="agent-output">Agent output</label>
+            <textarea id="agent-output" name="agent_output" rows="9" maxlength="24000" required placeholder="Paste the answer or completion claim"></textarea>
+            <p class="field-note" data-review-boundary>Local review only. Raw input is not persisted.</p>
+
+            <label for="agent-evidence">Evidence <span>optional</span></label>
+            <textarea id="agent-evidence" name="evidence" rows="6" maxlength="48000" placeholder="Paste source notes, a receipt, or a Readback proof bundle"></textarea>
+
+            <label class="checkbox-row">
+              <input type="checkbox" name="prior_approval">
+              <span><strong>The agent says approval existed</strong><small>Context only. This cannot grant authority.</small></span>
+            </label>
+
+            <div class="form-actions">
+              <button type="submit" class="run-button">Review claims</button>
+              <button type="reset" class="secondary-button">Clear</button>
+            </div>
+          </form>
+        </section>
+      </section>
+
+      <aside class="result-pane" aria-live="polite" aria-busy="false">
+        <div class="result-empty" data-result-empty>
+          <span class="empty-glyph" aria-hidden="true">?</span>
+          <h2>Awaiting a claim</h2>
+          <p>Money Penny will report only what the checked evidence supports.</p>
+        </div>
+
+        <section class="result-content" data-result hidden>
+          <header class="verdict-header">
+            <div>
+              <p class="eyebrow">Money Penny verdict</p>
+              <h2 data-verdict-label tabindex="-1">Not reviewed</h2>
+            </div>
+            <span data-verdict-decision>Waiting</span>
+          </header>
+
+          <p class="verdict-summary" data-verdict-summary></p>
+
+          <dl class="result-facts">
+            <div><dt>Evidence</dt><dd data-fact-evidence>Not checked</dd></div>
+            <div><dt>Authority</dt><dd data-fact-authority>Not checked</dd></div>
+            <div><dt>Completion</dt><dd data-fact-completion>Not checked</dd></div>
+            <div><dt>Security</dt><dd data-fact-security>Not checked</dd></div>
+          </dl>
+
+          <section class="claim-section">
+            <header>
+              <h3>Claims checked</h3>
+              <span data-claim-count>0</span>
+            </header>
+            <ol data-claims></ol>
+          </section>
+
+          <section class="next-action">
+            <p class="eyebrow">Next action</p>
+            <p data-next-action></p>
+          </section>
+
+          <p class="receipt-line" data-receipt></p>
+
+          <details class="technical-record">
+            <summary>Technical record</summary>
+            <pre data-technical-record></pre>
+          </details>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <span>Money Penny Readback</span>
+    <span data-edition-label>Local-only competition edition</span>
+    <span>No model calls or personal accounts</span>
+  </footer>
+</body>
+</html>
